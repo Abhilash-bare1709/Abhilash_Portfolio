@@ -1,0 +1,138 @@
+footer {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  position: relative;
+  z-index: 1;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 5% 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 3rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-bottom: 1rem;
+  }
+}
+
+/* ─ Brand ─ */
+.footer-logo {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+
+  span { color: var(--text); }
+}
+
+.footer-tagline {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  max-width: 300px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* ─ Nav ─ */
+.footer-nav {
+  h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  ul { list-style: none; }
+
+  li {
+    margin-bottom: 0.6rem;
+
+    a {
+      font-size: 0.9rem;
+      color: var(--muted);
+      cursor: pointer;
+      transition: color 0.2s, padding-left 0.2s;
+      display: block;
+
+      &:hover {
+        color: var(--accent);
+        padding-left: 6px;
+      }
+    }
+  }
+}
+
+/* ─ Contact ─ */
+.footer-contact {
+  h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+
+  i {
+    color: var(--accent);
+    font-size: 0.85rem;
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  a, span {
+    font-size: 0.88rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a:hover { color: var(--accent); }
+}
+
+/* ─ Bottom bar ─ */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 5%;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  span {
+    font-size: 0.83rem;
+    color: var(--muted);
+
+    strong { color: var(--accent); }
+  }
+
+  .footer-tech {
+    i { color: var(--accent); }
+  }
+}

@@ -1,0 +1,19 @@
+<nav [class.scrolled]="scrolled">
+  <div class="nav-logo" (click)="navigate('home')">AB<span>.</span></div>
+
+  <ul class="nav-links" [class.open]="menuOpen">
+    <li *ngFor="let link of links">
+      <a
+        (click)="navigate(link.href)"
+        [class.active]="activeSection === link.href">
+        {{ link.label }}
+      </a>
+    </li>
+  </ul>
+
+  <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>

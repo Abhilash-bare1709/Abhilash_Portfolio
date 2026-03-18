@@ -1,0 +1,31 @@
+<div id="reviews" class="section-wrapper bg-alt">
+  <div class="section-inner">
+    <div class="section-tag">// What colleagues say</div>
+    <h2 class="section-title">Colleague <span>Reviews</span></h2>
+    <div class="section-line"></div>
+
+    <div class="reviews-grid">
+      <div
+        class="review-card"
+        *ngFor="let review of reviews; let i = index"
+        appReveal
+        [revealDelay]="i * 100">
+
+        <div class="quote-mark">"</div>
+        <p class="review-text">{{ review.text }}</p>
+
+        <div class="review-author">
+          <div class="avatar">{{ review.initials }}</div>
+          <div class="author-info">
+            <div class="author-name">{{ review.name }}</div>
+            <div class="author-role">{{ review.role }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="placeholder-note">
+      ✏️ Replace placeholder reviews in <code>reviews.component.ts</code> with real testimonials.
+    </p>
+  </div>
+</div>

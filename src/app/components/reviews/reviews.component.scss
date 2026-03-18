@@ -1,0 +1,96 @@
+.bg-alt { background: var(--bg2); }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.review-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 2rem;
+  position: relative;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+
+  &:hover {
+    border-color: rgba(0, 196, 255, 0.3);
+    box-shadow: var(--glow);
+    transform: translateY(-4px);
+  }
+}
+
+.quote-mark {
+  font-family: 'Syne', sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--accent);
+  opacity: 0.2;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+  user-select: none;
+}
+
+.review-text {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.85;
+  font-style: italic;
+  margin-bottom: 1.75rem;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent2), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 196, 255, 0.3);
+}
+
+.author-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--heading);
+  margin-bottom: 0.2rem;
+}
+
+.author-role {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.placeholder-note {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  opacity: 0.6;
+
+  code {
+    background: rgba(0, 196, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: var(--accent);
+    font-size: 0.78rem;
+  }
+}

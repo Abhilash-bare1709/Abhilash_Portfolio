@@ -1,0 +1,25 @@
+<div id="skills" class="section-wrapper bg-alt">
+  <div class="section-inner">
+    <div class="section-tag">// What I know</div>
+    <h2 class="section-title">Technical <span>Skills</span></h2>
+    <div class="section-line"></div>
+
+    <div class="skills-grid">
+      <div
+        class="skill-card"
+        *ngFor="let skill of skills; let i = index"
+        appReveal
+        [revealDelay]="i * 80">
+        <div class="skill-card-header">
+          <div class="skill-icon">
+            <i [class]="skill.icon"></i>
+          </div>
+          <div class="skill-title">{{ skill.title }}</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag" *ngFor="let tag of skill.tags">{{ tag }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

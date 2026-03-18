@@ -1,0 +1,26 @@
+<div id="projects" class="section-wrapper bg-alt">
+  <div class="section-inner">
+    <div class="section-tag">// What I've built</div>
+    <h2 class="section-title">Featured <span>Projects</span></h2>
+    <div class="section-line"></div>
+
+    <div class="projects-grid">
+      <div
+        class="project-card"
+        *ngFor="let project of projects; let i = index"
+        appReveal
+        [revealDelay]="i * 120">
+
+        <div class="card-top-bar"></div>
+        <div class="project-type">{{ project.type }}</div>
+        <h3 class="project-title">{{ project.title }}</h3>
+        <p class="project-subtitle">{{ project.subtitle }}</p>
+        <p class="project-desc">{{ project.description }}</p>
+
+        <div class="project-stack">
+          <span class="stack-tag" *ngFor="let tag of project.stack">{{ tag }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

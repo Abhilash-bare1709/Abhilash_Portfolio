@@ -1,0 +1,71 @@
+<section id="home">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+
+  <div class="hero-content">
+
+    <!-- LEFT: Text -->
+    <div class="hero-text">
+      <div class="hero-tag">
+        <span class="dot"></span>
+        Available for Opportunities
+      </div>
+
+      <h1 class="hero-name">
+        Abhilash<br />
+        <span class="accent">Bare</span>
+      </h1>
+
+      <p class="hero-title">Application Support Engineer &amp; Platform Specialist</p>
+
+      <p class="hero-desc">
+        4+ years of experience in SaaS product companies, supporting hosted,
+        customer-facing applications in live production environments. Expert in
+        real-time incident resolution, root cause analysis, and 24/7 helpdesk operations.
+      </p>
+
+      <div class="hero-actions">
+        <a href="assets/resume/Abhilash_Bare_Resume.pdf"
+           download="Abhilash_Bare_Resume.pdf"
+           class="btn-primary">
+          <i class="fas fa-download"></i> Download Resume
+        </a>
+        <button class="btn-outline" (click)="scrollTo('contact')">
+          <i class="fas fa-envelope"></i> Contact Me
+        </button>
+      </div>
+
+      <div class="social-row">
+        <a [href]="linkedinUrl" target="_blank" class="social-btn" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a [href]="facebookUrl" target="_blank" class="social-btn" title="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a [href]="instagramUrl" target="_blank" class="social-btn" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a [href]="'mailto:' + email" class="social-btn" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT: Photo Card -->
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-card">
+        <div class="photo-frame">
+          <img *ngIf="hasPhoto" [src]="photoSrc" alt="Abhilash Bare" />
+          <span *ngIf="!hasPhoto" class="photo-initials">AB</span>
+          <div class="corner tl"></div>
+          <div class="corner br"></div>
+        </div>
+        <div class="exp-badge">
+          <span class="num">4+</span>
+          <span class="lbl">YEARS EXP</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

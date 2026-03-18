@@ -1,0 +1,117 @@
+<div id="contact" class="section-wrapper">
+  <div class="section-inner">
+    <div class="section-tag">// Let's talk</div>
+    <h2 class="section-title">Get In <span>Touch</span></h2>
+    <div class="section-line"></div>
+
+    <div class="contact-grid">
+
+      <!-- LEFT: Info -->
+      <div class="contact-info" appReveal>
+        <h3>Open to new opportunities</h3>
+        <p>
+          Whether you have a role in mind, want to collaborate on a project,
+          or just want to say hello — my inbox is always open.
+        </p>
+
+        <div class="contact-item" *ngFor="let item of contactItems">
+          <div class="item-icon">
+            <i [class]="item.icon"></i>
+          </div>
+          <div class="item-text">
+            <div class="item-label">{{ item.label }}</div>
+            <a *ngIf="item.href" [href]="item.href" [target]="item.href.startsWith('http') ? '_blank' : '_self'">
+              {{ item.value }}
+            </a>
+            <span *ngIf="!item.href" style="white-space: pre-line; color: var(--text); font-size: 0.9rem;">{{ item.value }}</span>
+          </div>
+        </div>
+
+        <div class="social-row">
+          <a [href]="linkedinUrl" target="_blank" class="social-btn" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a [href]="facebookUrl" target="_blank" class="social-btn" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a [href]="instagramUrl" target="_blank" class="social-btn" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a [href]="'mailto:' + email" class="social-btn" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="form-card" appReveal [revealDelay]="150">
+
+        <!-- Success state -->
+        <div class="form-success" *ngIf="submitted">
+          <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+          <h3>Message Sent!</h3>
+          <p>Thanks for reaching out. I'll get back to you as soon as possible.</p>
+          <button class="btn-outline" (click)="reset()">Send Another</button>
+        </div>
+
+        <!-- Form state -->
+        <div *ngIf="!submitted">
+          <h3 class="form-title">Send a Message</h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Your Name <span class="req">*</span></label>
+              <input
+                id="fname"
+                type="text"
+                [(ngModel)]="form.name"
+                placeholder="John Doe"
+                [class.error]="errors.name" />
+              <span class="error-msg" *ngIf="errors.name">{{ errors.name }}</span>
+            </div>
+            <div class="form-group">
+              <label for="fcompany">Company</label>
+              <input
+                id="fcompany"
+                type="text"
+                [(ngModel)]="form.company"
+                placeholder="Your Company" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="femail">Email Address <span class="req">*</span></label>
+            <input
+              id="femail"
+              type="email"
+              [(ngModel)]="form.email"
+              placeholder="john@company.com"
+              [class.error]="errors.email" />
+            <span class="error-msg" *ngIf="errors.email">{{ errors.email }}</span>
+          </div>
+
+          <div class="form-group">
+            <label for="fmessage">Message <span class="req">*</span></label>
+            <textarea
+              id="fmessage"
+              [(ngModel)]="form.message"
+              placeholder="Tell me about your project or opportunity..."
+              [class.error]="errors.message">
+            </textarea>
+            <span class="error-msg" *ngIf="errors.message">{{ errors.message }}</span>
+          </div>
+
+          <button class="submit-btn" (click)="submit()" [disabled]="submitting">
+            <span *ngIf="!submitting">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </span>
+            <span *ngIf="submitting">
+              <i class="fas fa-spinner fa-spin"></i> Sending...
+            </span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

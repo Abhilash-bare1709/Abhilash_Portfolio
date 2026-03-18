@@ -1,0 +1,61 @@
+<footer>
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <div class="footer-logo">AB<span>.</span></div>
+      <p class="footer-tagline">
+        Application Support Engineer &amp; Platform Specialist.<br>
+        Building reliable systems, one incident at a time.
+      </p>
+      <div class="footer-social">
+        <a [href]="linkedinUrl"  target="_blank" class="social-btn" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a [href]="facebookUrl"  target="_blank" class="social-btn" title="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a [href]="instagramUrl" target="_blank" class="social-btn" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a [href]="'mailto:' + email" class="social-btn" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-nav">
+      <h4>Quick Links</h4>
+      <ul>
+        <li *ngFor="let link of navLinks">
+          <a (click)="scrollTo(link.href)">{{ link.label }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <div class="footer-contact-item">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:bareabhilash2000@gmail.com">bareabhilash2000&#64;gmail.com</a>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fas fa-phone"></i>
+        <a href="tel:+919526485911">+91&nbsp;9526485911</a>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Kerala, India</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>© {{ year }} <strong>Abhilash Bare</strong>. Built with Angular &amp; ♥</span>
+    <span class="footer-tech">
+      <i class="fab fa-angular"></i> Angular 17
+      &nbsp;·&nbsp;
+      <i class="fab fa-github"></i> GitHub Pages
+    </span>
+  </div>
+</footer>

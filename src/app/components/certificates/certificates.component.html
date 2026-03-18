@@ -1,0 +1,26 @@
+<div id="certificates" class="section-wrapper">
+  <div class="section-inner">
+    <div class="section-tag">// Credentials</div>
+    <h2 class="section-title">Awards &amp; <span>Certifications</span></h2>
+    <div class="section-line"></div>
+
+    <div class="certs-grid">
+      <div
+        class="cert-card"
+        *ngFor="let cert of certificates; let i = index"
+        appReveal
+        [revealDelay]="i * 80">
+
+        <div class="cert-icon">
+          <i [class]="cert.icon"></i>
+        </div>
+        <div class="cert-info">
+          <div class="cert-name">{{ cert.name }}</div>
+          <div class="cert-issuer">
+            <i class="fas fa-award"></i> {{ cert.issuer }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
