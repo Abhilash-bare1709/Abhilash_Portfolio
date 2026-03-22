@@ -23,11 +23,11 @@ export class ContactComponent {
   submitting = false;
   errors: Partial<ContactForm> = {};
 
-  linkedinUrl = 'https://www.linkedin.com/in/abhilash-bare';
-  email       = 'bareabhilash2000@gmail.com';
-  phone       = '+91 9526485911';
-  facebookUrl = 'https://facebook.com/YOUR_PROFILE';
-  instagramUrl= 'https://instagram.com/YOUR_HANDLE';
+  linkedinUrl = 'https://www.linkedin.com/in/abhilash-bare-6961aa194/';
+  facebookUrl = 'https://www.facebook.com/abhilashbare.bare';
+  instagramUrl = 'https://www.instagram.com/abhilash.bare/';
+  twitterUrl   = 'https://x.com/AbhilashBare';
+  email       =  'bareabhilash2000@gmail.com';
 
   contactItems = [
     { icon: 'fas fa-envelope', label: 'Email',    value: 'bareabhilash2000@gmail.com',       href: 'mailto:bareabhilash2000@gmail.com' },

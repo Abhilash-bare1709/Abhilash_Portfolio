@@ -11,15 +11,15 @@ import { ScrollService } from '../../services/scroll.service';
 })
 export class HeroComponent {
   // ─── UPDATE THESE WITH YOUR REAL LINKS ───
-  linkedinUrl = 'https://www.linkedin.com/in/abhilash-bare';
-  facebookUrl = 'https://facebook.com/YOUR_PROFILE';   // 🔁 Replace
-  instagramUrl = 'https://instagram.com/YOUR_HANDLE';  // 🔁 Replace
-  email       = 'bareabhilash2000@gmail.com';
+  linkedinUrl = 'https://www.linkedin.com/in/abhilash-bare-6961aa194/';
+  facebookUrl = 'https://www.facebook.com/abhilashbare.bare';
+  instagramUrl = 'https://www.instagram.com/abhilash.bare/';
+  twitterUrl   = 'https://x.com/AbhilashBare';
+  email       =  'bareabhilash2000@gmail.com';
   phone       = '+919526485911';
 
-  // ─── SET TO true AND UPDATE src ONCE YOU HAVE A PHOTO ───
-  hasPhoto = false;
-  photoSrc = 'assets/images/profile.jpg';  // 🔁 Replace with your photo
+  hasPhoto = true;
+  photoSrc = 'assets/images/Professional Image.jpg';  
 
   constructor(private scrollService: ScrollService) {}
 

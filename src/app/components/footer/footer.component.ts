@@ -12,10 +12,11 @@ import { ScrollService } from '../../services/scroll.service';
 export class FooterComponent {
   year = new Date().getFullYear();
 
-  linkedinUrl  = 'https://www.linkedin.com/in/abhilash-bare';
-  facebookUrl  = 'https://facebook.com/YOUR_PROFILE';
-  instagramUrl = 'https://instagram.com/YOUR_HANDLE';
-  email        = 'bareabhilash2000@gmail.com';
+  linkedinUrl = 'https://www.linkedin.com/in/abhilash-bare-6961aa194/';
+  facebookUrl = 'https://www.facebook.com/abhilashbare.bare';
+  instagramUrl = 'https://www.instagram.com/abhilash.bare/';
+  twitterUrl   = 'https://x.com/AbhilashBare';
+  email       =  'bareabhilash2000@gmail.com';
 
   navLinks = [
     { label: 'Home',         href: 'home' },
