@@ -49,31 +49,29 @@ export class ContactComponent {
     if (!this.validate()) return;
     this.submitting = true;
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // TO RECEIVE REAL EMAILS:
-    // 1. Go to https://formspree.io → create a free account → get your form ID
-    // 2. Replace 'YOUR_FORMSPREE_ID' with the actual ID (e.g. 'xpwzjkqb')
-    // ─────────────────────────────────────────────────────────────────────────
-    const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // 🔁 Replace this
-
     try {
-      if (FORMSPREE_ID !== 'YOUR_FORMSPREE_ID') {
-        await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name: this.form.name,
-            company: this.form.company,
-            email: this.form.email,
-            message: this.form.message
-          })
-        });
+      // Send data to our local Node.js backend
+      const response = await fetch('http://localhost:3000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: this.form.name,
+          company: this.form.company,
+          email: this.form.email,
+          message: this.form.message
+        })
+      });
+
+      if (response.ok) {
+        // Simulate short delay for UI
+        await new Promise(r => setTimeout(r, 800));
+        this.submitted = true;
+      } else {
+        throw new Error('Server returned an error');
       }
-      // Simulate short delay even in demo mode
-      await new Promise(r => setTimeout(r, 800));
-      this.submitted = true;
-    } catch {
-      alert('Something went wrong. Please try emailing directly.');
+    } catch (error) {
+      alert('Something went wrong. Please check if your backend server is running.');
+      console.error(error);
     } finally {
       this.submitting = false;
     }
